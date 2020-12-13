@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "pdf_script": "node index.js",
-    "reset_pdf_dir": "node src/resetDir.js"
+    "reset_pdf_dir": "node src/resetDir.js",
+    "pdf_help": "node src/help.js"
   },
   "keywords": [
     "pdf"

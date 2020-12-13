@@ -28,16 +28,13 @@ async function generatePDF() {
     }
 }
 
+console.time("proceso finalizado en");
 generateArrayOfOriginalPDF();
 //console.log(names);
 await generatePDF().catch(error => console.log(error));
-console.log('proceso finalizado con exito...');
-
-// const pages = await getNumberOfPages(initialPath);
-
-//generatePDFwith3Pages('C:/Users/aleja/OneDrive/Documentos/Libros/test.pdf', './src/test1.pdf')
-//.catch(err => console.log(err));
-
-// console.log(pages);
-
-// console.log(fileNames.length);
+process.on('uncaughtException', (err, origin) => {
+    console.error(err.message);
+    console.error('Surgio un error inesperado :(');
+    console.error(err);
+})
+console.timeEnd("proceso finalizado en");
