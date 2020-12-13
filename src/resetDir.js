@@ -17,7 +17,5 @@ function clearDirectory(data, path) {
     });
 }
 
-console.time("proceso finalizado en");
 clearDirectory(resultData, path3);
 clearDirectory(srcData, path2);
-console.timeEnd("proceso finalizado en");
