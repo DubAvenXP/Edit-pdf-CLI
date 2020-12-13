@@ -8,7 +8,8 @@ Pasos
 # Archivos
         * La carpeta src que posee los PDF para extraer informacion.
         * La carpeta result que tendra todos los PDF resultantes de la extraccion.
-        * El archivo csv index.csv que debe tener los nombre con los que se quiere nombrar los pdf resultantes el titulo de la primera columna del csv debe ser "name".
+        * El archivo csv index.csv que debe tener los nombre con los que se quiere nombrar los pdf resultantes 
+        el titulo de la primera columna del csv debe ser "name".
 # Comandos
     * npm run pdf_script: para iniciar la extraccion.
     * npm run reset_pdf_dir: para limpiar los directorios.
