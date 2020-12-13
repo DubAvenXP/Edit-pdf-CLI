@@ -16,4 +16,5 @@ console.group('Comandos');
 console.groupEnd('Comandos');
 console.log('Nota: por el momento solamente se pueden extraer 3 paginas de todos los pdf')
 console.log('');
+console.log('Node: v14.15.1');
 console.log('Script desarrollado por Alejandro Dubon - github: @DubAvenXP - Contacto dubavenxp@gmail.com');
