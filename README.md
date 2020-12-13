@@ -1,6 +1,7 @@
 # Edit-pdf-CLI
 This is a experimental project to extract PDF pages from the CLI with some requirements
-Instrucciones para correr el script
+
+# Instrucciones para correr el script
 Pasos
 1. Asegurate de tener una carpeta con el nombre "pdfDir" en la ruta OneDrive/Documentos
 2. Dentro de pdfDir deben existir lo siguiente...
