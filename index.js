@@ -31,6 +31,7 @@ async function generatePDF() {
 generateArrayOfOriginalPDF();
 //console.log(names);
 await generatePDF().catch(error => console.log(error));
+console.log('proceso finalizado con exito...');
 
 // const pages = await getNumberOfPages(initialPath);
 

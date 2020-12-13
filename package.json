@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "pdfscript": "node index.js"
+    "pdf_script": "node index.js",
+    "reset_pdf_dir": "node src/resetDir.js"
   },
   "keywords": [
     "pdf"
