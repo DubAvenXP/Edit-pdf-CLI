@@ -1,22 +1,27 @@
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, readFile, read } from 'fs';
 import { PDFDocument } from 'pdf-lib';
 
 
 async function generatePDFwith3Pages(pathExtract, pathSave) {
+  // crear un nuevo documento
   const newDocument = await PDFDocument.create();
+  // leer el documento original
   const originalDoc = readFileSync(pathExtract);
 
+  // convertir el documento original a un PDF util
   let originalpdf = await PDFDocument.load(originalDoc);
-  const copiedPages = await newDocument.copyPages(originalpdf, [0, 1, 2]);
-  const [firstPage, secondPage, thirdPage] = copiedPages;
 
-  newDocument.insertPage(0, firstPage);
-  newDocument.insertPage(1, secondPage);
-  newDocument.insertPage(2, thirdPage);
+  const copiedPages = await newDocument.copyPages(originalpdf, [0, 1, 2]);
+  const [a, b, c] = copiedPages;
   
+  newDocument.insertPage(0, a);
+  newDocument.insertPage(1, b);
+  newDocument.insertPage(2, c);
+  
+
   writeFileSync(pathSave, await newDocument.save());
   console.log('archivo creado')
-  await delete3Pages(pathExtract, 0, 1, 2);
+  await delete3Pages(pathExtract);
   console.log('');
 }
 
@@ -26,12 +31,11 @@ async function getNumberOfPages(pathExtract) {
   return originalpdf.getPageCount();
 }
 
-async function delete3Pages(pathExtract, a, b, c) {
-  const originalDoc = readFileSync(pathExtract);
-  let originalpdf = await PDFDocument.load(originalDoc);
-  originalpdf.removePage(a);
-  originalpdf.removePage(b);
-  originalpdf.removePage(c);
+async function delete3Pages(pathExtract) {
+  let originalpdf = await PDFDocument.load(readFileSync(pathExtract));
+  originalpdf.removePage(2);
+  originalpdf.removePage(1);
+  originalpdf.removePage(0);
   //console.log(await getNumberOfPages(pathExtract)); 
   writeFileSync(pathExtract, await originalpdf.save());
   console.log('paginas eliminadas, paginas restantes: ' + await getNumberOfPages(pathExtract)); 
