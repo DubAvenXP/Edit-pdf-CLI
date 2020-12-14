@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 console.log('Instrucciones para correr el script');
 console.group('Pasos');
     console.log('1. Asegurate de tener una carpeta con el nombre "pdfDir" en la ruta OneDrive/Documentos');

@@ -1,4 +1,6 @@
-import { getResultPDF, path3, pdfNames, path2 } from './getFileNames.js';
+#!/usr/bin/env node
+
+import { getResultPDF, path3, pdfNames, path2 } from '../src/getFileNames.js';
 import { unlink } from 'fs';
 
 const resultData = getResultPDF();
