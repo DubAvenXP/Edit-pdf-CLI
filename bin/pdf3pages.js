@@ -2,6 +2,6 @@
 
 import { extract3pages } from '../src/main.js';
 
-(function() {
-    extract3pages();
-})()
+(async function() {
+    await extract3pages();
+})();
