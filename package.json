@@ -1,27 +1,27 @@
 {
-  "name": "pdfproyect",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "pdf_script": "node bin/index.js",
-    "pdf_reset_dir": "node bin/resetDir.js",
-    "pdf_help": "node bin/help.js"
-  },
-  "keywords": [
-    "pdf"
-  ],
-  "author": "Alejandro Dubon <alejandrodubon88@gmail.com>",
-  "license": "MIT",
-  "bin": {
-    "pdf_script": "./bin/index.js",
-    "pdf_reset_dir": "./bin/resetDir.js",
-    "pdf_help": "./bin/help.js"
-  },
-  "dependencies": {
-    "csvtojson": "^2.0.10",
-    "pdf-lib": "^1.13.0"
-  },
-  "preferGlobal": true
+    "name": "pdfproyect",
+    "version": "1.0.0",
+    "description": "",
+    "main": "pdf3pages.js",
+    "type": "module",
+    "scripts": {
+        "pdf_3_pages": "node bin/pdf3pages.js",
+        "pdf_reset_dir": "node bin/resetDir.js",
+        "pdf_help": "node bin/help.js"
+    },
+    "keywords": [
+        "pdf"
+    ],
+    "author": "Alejandro Dubon <alejandrodubon88@gmail.com>",
+    "license": "MIT",
+    "bin": {
+        "pdf_3_pages": "./bin/pdf3pages.js",
+        "pdf_reset_dir": "./bin/resetDir.js",
+        "pdf_help": "./bin/help.js"
+    },
+    "dependencies": {
+        "csvtojson": "^2.0.10",
+        "pdf-lib": "^1.13.0"
+    },
+    "preferGlobal": true
 }
