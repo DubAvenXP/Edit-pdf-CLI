@@ -12,7 +12,8 @@ console.log('   los pdf resultantes el titulo de la primera columna del csv debe
 console.groupEnd('Archivos')
 console.groupEnd('Pasos');
 console.group('Comandos');
-console.log('pdf_script: para iniciar la extraccion');
+console.log('pdf_1_page: para iniciar la extraccion de 1 pagina de cada archivo');
+console.log('pdf_3_page: para iniciar la extraccion de 3 paginas de cada archivo');
 console.log('pdf_reset_dir: para limpiar los directorios');
 console.log('pdf_help: para mostrar estas instrucciones');
 console.groupEnd('Comandos');

@@ -11,10 +11,10 @@ Pasos
         * El archivo csv index.csv que debe tener los nombre con los que se quiere nombrar los pdf resultantes 
         el titulo de la primera columna del csv debe ser "name".
 # Comandos
-    * pdf_script: para iniciar la extraccion.
-    * pdf_run_dir: para limpiar los directorios.
+    * pdf_1_page: para iniciar la extraccion de 1 paginas.
+    * pdf_3_pages: para iniciar la extraccion de 3 pagina.
+    * pdf_reset_dir: para limpiar los directorios.
     * pdf_help: para mostrar estas instrucciones.
-    
 
 Nota: por el momento solamente se pueden extraer 3 paginas de todos los pdf.
 
