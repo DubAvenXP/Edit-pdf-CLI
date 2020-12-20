@@ -4,6 +4,7 @@ import pkg from 'csvtojson';
 const { csv } = pkg;
 
 const username = userInfo().username;
+
 // Work PC
 // const csvFile = `C:/Users/${username}.GLOBAL-BUSINESS/Documents/pdfDirectory/index.csv`;
 // const path1 = `C:/Users/${username}.GLOBAL-BUSINESS/Documents/`;
