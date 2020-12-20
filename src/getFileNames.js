@@ -4,16 +4,17 @@ import pkg from 'csvtojson';
 const { csv } = pkg;
 
 const username = userInfo().username;
-const csvFile = `C:/Users/${username}.GLOBAL-BUSINESS/Documents/pdfDirectory/index.csv`;
-const path1 = `C:/Users/${username}.GLOBAL-BUSINESS/Documents/`;
-const path2 = `C:/Users/${username}.GLOBAL-BUSINESS/Documents/pdfDirectory/src`;
-const path3 = `C:/Users/${username}.GLOBAL-BUSINESS/Documents/pdfDirectory/result`;
+// Work PC
+// const csvFile = `C:/Users/${username}.GLOBAL-BUSINESS/Documents/pdfDirectory/index.csv`;
+// const path1 = `C:/Users/${username}.GLOBAL-BUSINESS/Documents/`;
+// const path2 = `C:/Users/${username}.GLOBAL-BUSINESS/Documents/pdfDirectory/src`;
+// const path3 = `C:/Users/${username}.GLOBAL-BUSINESS/Documents/pdfDirectory/result`;
 
-// For another PC
-// const csvFile = `C:/Users/${username}/OneDrive/Documentos/pdfDirectory/index.csv`;
-// const path1 = `C:/Users/${username}/OneDrive/Documentos/`;
-// const path2 = `C:/Users/${username}/OneDrive/Documentos/pdfDirectory/src`;
-// const path3 = `C:/Users/${username}/OneDrive/Documentos/pdfDirectory/result`;
+// Laptop
+const csvFile = `C:/Users/${username}/OneDrive/Documentos/pdfDirectory/index.csv`;
+const path1 = `C:/Users/${username}/OneDrive/Documentos/`;
+const path2 = `C:/Users/${username}/OneDrive/Documentos/pdfDirectory/src`;
+const path3 = `C:/Users/${username}/OneDrive/Documentos/pdfDirectory/result`;
 
 async function generateFileNames() {
     return await csv().fromFile(csvFile);;
@@ -42,6 +43,9 @@ function getResultPDF() {
 
 const pdfNames = getPdfSrc();
 const newfileNames = await generateFileNames();
+
+
+
 
 
 export { newfileNames, pdfNames, path2, path3, getResultPDF };

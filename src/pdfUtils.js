@@ -20,7 +20,7 @@ async function generatePDFwith3Pages(pathExtract, pathSave) {
 
 
     writeFileSync(pathSave, await newDocument.save());
-    console.log('archivo creado')
+    console.log('archivo creado - se extrajeron 3 paginas')
     await delete3Pages(pathExtract);
     console.log('');
 }

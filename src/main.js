@@ -6,6 +6,7 @@ const originalPdfPath = [];
 const standardPath = path2;
 const standardFinalPath = path3;
 const names = newfileNames;
+let counter = 0;
 
 function generateArrayOfOriginalPDF() {
     for (let i = 0; i < pdfNames.length; i++) {
@@ -20,41 +21,53 @@ function noDetectedException() {
     });
 }
 
-async function generatePDF(callback) {
-    let counter = 0;
-    console.log('original path: ' + originalPdfPath);
+async function generatePDF(callback, options) {
     // recorrer los pdf src
     for (let i = 0; i < originalPdfPath.length; i++) {
         try {
             let documentLength = await getNumberOfPages(originalPdfPath[i])
-                // recorrer los nombres del json index.csv
-            for (let j = 0; j < documentLength; j++) {
-                if (names[counter].name === undefined) {
-                    console.log('se acabaron los nombres del index.csv');
-                } else {
-                    let finalPath = `${standardFinalPath}/${names[counter].name}.pdf`;
-                    console.log(`Archivo en ejecucion: ${originalPdfPath[i]}`);
-                    console.log(`Enviado a: ${finalPath}`);
-                    await callback(originalPdfPath[i], finalPath);
-                    counter++;
-                }
-            }
+            switch (options) {
+                case 1:
+                    await pdf(documentLength, i, callback);
+                    break;
+                case 3:
+                    let rounds = documentLength/3;
+                    let residual = documentLength%3;
+                    if (residual === 0) {
+                        await pdf(rounds, i, callback);
+                    } else {
+                        console.log('este documento no se puede dividir');
+                    }
+                    break;
+            }            
         } catch (error) {
             console.error('se ha detectado un error, generatePDF()');
-            console.error(error);
+            console.error('Por favor revisa el index.csv y el numero de paginas de tu documento');
             console.error(error.message);
-            console.error(error.code);
         }
     }
 }
 
+// comunication with pdfUtils
+async function pdf(rounds, i, callback) {
+    for (let j = 0; j < rounds; j++) {
+        let finalPath = `${standardFinalPath}/${names[counter].name}.pdf`;
+        console.log(`Archivo en ejecucion: ${originalPdfPath[i]}`);
+        console.log(`Enviado a: ${finalPath}`);
+        await callback(originalPdfPath[i], finalPath)
+        .catch(err => console.error(err.message));
+        counter++;
+    }
+}
 
+
+// comunication with bin pdf3pages and pdf1page
 async function extract3pages() {
     console.time("proceso finalizado en");
     generateArrayOfOriginalPDF();
     await generatePDF(async function(a, b) {
         await generatePDFwith3Pages(a, b);
-    }).catch(error => console.error(error));
+    }, 3).catch(error => console.error(error));
 
     noDetectedException();
 
@@ -66,7 +79,7 @@ async function extract1page() {
     generateArrayOfOriginalPDF();
     await generatePDF(async function(a, b) {
         await generatePDFwith1Page(a, b);
-    }).catch(error => console.error(error));
+    }, 1).catch(error => console.error(error));
 
     noDetectedException();
 
