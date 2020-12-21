@@ -40,7 +40,7 @@ async function generatePDFwith2Pages(pathExtract, pathSave) {
     newDocument.insertPage(1, b);
 
     writeFileSync(pathSave, await newDocument.save());
-    console.log('archivo creado - se extrajeron 3 paginas')
+    console.log('archivo creado - se extrajeron 2 paginas')
     await delete2Pages(pathExtract);
     console.log('');
 }
