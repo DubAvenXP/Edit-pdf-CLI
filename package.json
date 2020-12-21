@@ -6,6 +6,7 @@
     "type": "module",
     "scripts": {
         "pdf_3_pages": "node bin/pdf3pages.js",
+        "pdf_2_pages": "node bin/pdf2pages.js",
         "pdf_1_page": "node bin/pdf1page.js",
         "pdf_reset_dir": "node bin/resetDir.js",
         "pdf_help": "node bin/help.js"
@@ -17,6 +18,7 @@
     "license": "MIT",
     "bin": {
         "pdf_3_pages": "./bin/pdf3pages.js",
+        "pdf_2_pages": "./bin/pdf2pages.js",
         "pdf_1_page": "./bin/pdf1page.js",
         "pdf_reset_dir": "./bin/resetDir.js",
         "pdf_help": "./bin/help.js"
