@@ -45,6 +45,7 @@ async function generatePDF(callback, options) {
                         await pdf(rounds, i, callback);
                     } else {
                         console.log('este documento no se puede dividir');
+                        console.log('Por favor revisa que la cantidad de nombres en el index.csv y el pdf coincidan');
                     }
                     break;
                 case 3:
