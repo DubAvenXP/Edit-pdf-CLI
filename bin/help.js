@@ -13,7 +13,8 @@ console.groupEnd('Archivos')
 console.groupEnd('Pasos');
 console.group('Comandos');
 console.log('pdf_1_page: para iniciar la extraccion de 1 pagina de cada archivo');
-console.log('pdf_3_page: para iniciar la extraccion de 3 paginas de cada archivo');
+console.log('pdf_2_pages: para iniciar la extraccion de 2 paginas de cada archivo');
+console.log('pdf_3_pages: para iniciar la extraccion de 3 paginas de cada archivo');
 console.log('pdf_reset_dir: para limpiar los directorios');
 console.log('pdf_help: para mostrar estas instrucciones');
 console.groupEnd('Comandos');
