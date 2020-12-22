@@ -1,6 +1,6 @@
 {
   "name": "pdf_proyect",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "This is a experimental project to extract PDF pages from the CLI with some requirements",
   "main": "pdf3pages.js",
   "type": "module",
