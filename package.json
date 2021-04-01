@@ -17,6 +17,7 @@
   "license": "MIT",
   "bin": {
     "pdf_3_pages": "bin/pdf3pages.js",
+    "pdf_2_page": "bin/pdf2pages.js",
     "pdf_1_page": "bin/pdf1page.js",
     "pdf_reset_dir": "bin/resetDir.js",
     "pdf_help": "bin/help.js"
